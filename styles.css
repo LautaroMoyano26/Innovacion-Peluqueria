@@ -40,6 +40,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -48,6 +50,9 @@ body {
     color: var(--text-light);
     background-color: var(--dark-bg);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
     letter-spacing: 0.5px;
     font-weight: 400;
 }
@@ -63,6 +68,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -161,6 +168,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     padding: 150px 20px 100px;
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero-image {
@@ -342,6 +351,9 @@ h1, h2, h3, h4, h5, h6 {
 .services {
     padding: 100px 0;
     background: var(--gray-dark);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .section-header {
@@ -435,6 +447,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 60px 0;
     background: var(--gray-dark);
     color: var(--white);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .features .section-title {
@@ -651,6 +666,9 @@ h1, h2, h3, h4, h5, h6 {
 .gallery {
     padding: 100px 0;
     background: var(--gray-dark);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .gallery-grid {
@@ -758,11 +776,14 @@ h1, h2, h3, h4, h5, h6 {
 .contact {
     padding: 50px 0;
     background: var(--gray-dark);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 30px;
     margin-top: 20px;
 }
@@ -1139,12 +1160,15 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .gallery-grid { grid-template-columns: 1fr; gap: 12px; }
-    .gallery { padding: 0; }
+    .gallery { padding: 0; margin: 0; }
     .gallery-item {
-        width: 100vw;
+        width: 100%;
+        max-width: 100%;
         height: 100vh;
         aspect-ratio: auto;
         border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
     .gallery .instagram-media,
     .gallery .instagram-media a { height: 100% !important; width: 100% !important; }
