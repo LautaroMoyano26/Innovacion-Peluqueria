@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npx --yes typescript@latest tsc",
+  "buildCommand": "echo 'Using pre-compiled files'",
   "outputDirectory": ".",
-  "installCommand": "npm install",
+  "installCommand": "echo 'No dependencies needed'",
   "framework": null
 }
