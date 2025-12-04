@@ -2,10 +2,10 @@
   "name": "innovacion-peluqueria-landing",
   "version": "1.0.0",
   "description": "Landing page para Innovación Peluquería Unisex",
-  "main": "app.js",
+  "main": "index.html",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch",
+    "start": "echo 'Static site ready'",
     "dev": "tsc --watch"
   },
   "keywords": ["landing-page", "peluqueria", "typescript"],
