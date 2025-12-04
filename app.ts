@@ -153,12 +153,23 @@ class LandingPageApp {
             return;
         }
 
-        // Simular envío del formulario
-        this.showNotification('¡Mensaje enviado! Te contactaremos pronto.', 'success');
+        // Crear mensaje para WhatsApp
+        const whatsappMessage = `*Nueva consulta desde la web*%0A%0A` +
+            `*Nombre:* ${formData.name}%0A` +
+            `*Email:* ${formData.email}%0A` +
+            `*Teléfono:* ${formData.phone}%0A%0A` +
+            `*Mensaje:*%0A${formData.message}`;
+
+        // Número de WhatsApp (incluir código de país sin +)
+        const whatsappNumber = '5493513047652';
+
+        // Abrir WhatsApp con el mensaje
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        window.open(whatsappURL, '_blank');
+
+        // Mostrar notificación y limpiar formulario
+        this.showNotification('Redirigiendo a WhatsApp...', 'success');
         this.contactForm.reset();
-        
-        // Aquí podrías integrar con un servicio de backend real
-        console.log('Datos del formulario:', formData);
     }
 
     private validateForm(data: ContactFormData): boolean {
@@ -224,41 +235,7 @@ class LandingPageApp {
 
     // ===== ANIMACIONES AL HACER SCROLL =====
     private setupAnimationsOnScroll(): void {
-        const observerOptions: IntersectionObserverInit = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos que queremos animar
-        const animateElements = document.querySelectorAll(
-            '.service-card, .feature-item, .gallery-item, .contact-item'
-        );
-        
-        animateElements.forEach((el, index) => {
-            (el as HTMLElement).style.opacity = '0';
-            (el as HTMLElement).style.transform = 'translateY(30px)';
-            (el as HTMLElement).style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(el);
-        });
-
-        // Estilo para elementos animados
-        const style = document.createElement('style');
-        style.textContent = `
-            .animate-in {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        `;
-        document.head.appendChild(style);
+        // Animaciones deshabilitadas para mejor rendimiento
     }
 
     // ===== CAROUSEL =====
@@ -267,6 +244,9 @@ class LandingPageApp {
 
         const slides = this.carouselTrack.querySelectorAll('.carousel-slide');
         const totalSlides = slides.length;
+
+        // Inicializar carrusel mostrando primera slide
+        this.updateCarousel();
 
         // Botón anterior
         this.carouselPrev.addEventListener('click', () => {
@@ -288,12 +268,6 @@ class LandingPageApp {
                 this.updateCarousel();
             });
         });
-
-        // Auto-play cada 5 segundos
-        setInterval(() => {
-            this.currentSlide = (this.currentSlide + 1) % totalSlides;
-            this.updateCarousel();
-        }, 5000);
     }
 
     private updateCarousel(): void {
@@ -301,13 +275,18 @@ class LandingPageApp {
 
         const slides = this.carouselTrack.querySelectorAll('.carousel-slide');
         const dots = this.carouselDots.querySelectorAll('.dot');
+        const totalSlides = slides.length;
 
-        // Actualizar slides
+        // Actualizar slides con efecto 3D
         slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev', 'next');
+            
             if (index === this.currentSlide) {
                 slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
+            } else if (index === (this.currentSlide - 1 + totalSlides) % totalSlides) {
+                slide.classList.add('prev');
+            } else if (index === (this.currentSlide + 1) % totalSlides) {
+                slide.classList.add('next');
             }
         });
 

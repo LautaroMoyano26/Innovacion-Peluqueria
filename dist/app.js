@@ -111,9 +111,16 @@ class LandingPageApp {
             this.showNotification('Por favor, completa todos los campos correctamente.', 'error');
             return;
         }
-        this.showNotification('¡Mensaje enviado! Te contactaremos pronto.', 'success');
+        const whatsappMessage = `*Nueva consulta desde la web*%0A%0A` +
+            `*Nombre:* ${formData.name}%0A` +
+            `*Email:* ${formData.email}%0A` +
+            `*Teléfono:* ${formData.phone}%0A%0A` +
+            `*Mensaje:*%0A${formData.message}`;
+        const whatsappNumber = '5493513047652';
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        window.open(whatsappURL, '_blank');
+        this.showNotification('Redirigiendo a WhatsApp...', 'success');
         this.contactForm.reset();
-        console.log('Datos del formulario:', formData);
     }
     validateForm(data) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -165,39 +172,13 @@ class LandingPageApp {
         });
     }
     setupAnimationsOnScroll() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        const animateElements = document.querySelectorAll('.service-card, .feature-item, .gallery-item, .contact-item');
-        animateElements.forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(el);
-        });
-        const style = document.createElement('style');
-        style.textContent = `
-            .animate-in {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        `;
-        document.head.appendChild(style);
     }
     setupCarousel() {
         if (!this.carouselTrack || !this.carouselPrev || !this.carouselNext || !this.carouselDots)
             return;
         const slides = this.carouselTrack.querySelectorAll('.carousel-slide');
         const totalSlides = slides.length;
+        this.updateCarousel();
         this.carouselPrev.addEventListener('click', () => {
             this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
             this.updateCarousel();
@@ -213,22 +194,23 @@ class LandingPageApp {
                 this.updateCarousel();
             });
         });
-        setInterval(() => {
-            this.currentSlide = (this.currentSlide + 1) % totalSlides;
-            this.updateCarousel();
-        }, 5000);
     }
     updateCarousel() {
         if (!this.carouselTrack || !this.carouselDots)
             return;
         const slides = this.carouselTrack.querySelectorAll('.carousel-slide');
         const dots = this.carouselDots.querySelectorAll('.dot');
+        const totalSlides = slides.length;
         slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev', 'next');
             if (index === this.currentSlide) {
                 slide.classList.add('active');
             }
-            else {
-                slide.classList.remove('active');
+            else if (index === (this.currentSlide - 1 + totalSlides) % totalSlides) {
+                slide.classList.add('prev');
+            }
+            else if (index === (this.currentSlide + 1) % totalSlides) {
+                slide.classList.add('next');
             }
         });
         dots.forEach((dot, index) => {
