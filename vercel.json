@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npx --yes typescript@latest tsc",
   "outputDirectory": ".",
   "installCommand": "npm install",
   "framework": null

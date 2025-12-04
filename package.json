@@ -4,14 +4,14 @@
   "description": "Landing page para Innovación Peluquería Unisex",
   "main": "index.html",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "echo 'Static site ready'",
     "dev": "tsc --watch"
   },
   "keywords": ["landing-page", "peluqueria", "typescript"],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^5.3.3"
   }
 }
