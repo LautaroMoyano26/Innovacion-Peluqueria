@@ -1,0 +1,17 @@
+{
+  "name": "innovacion-peluqueria-landing",
+  "version": "1.0.0",
+  "description": "Landing page para Innovación Peluquería Unisex",
+  "main": "app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch"
+  },
+  "keywords": ["landing-page", "peluqueria", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

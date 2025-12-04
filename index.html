@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Innovación Peluquería Unisex - Servicios profesionales de peluquería para todos">
+    <title>Innovación Peluquería Unisex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logoInnovacionPNG.png" alt="Innovación Peluquería Unisex Logo" class="logo-img">
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-image">
+            <img src="images/portada.jpeg" alt="Innovación Peluquería Unisex">
+        </div>
+        <div class="hero-content">
+            <div class="hero-edition">EDICIÓN 2025</div>
+            <h1 class="hero-title">INNOVACIÓN</h1>
+            <div class="hero-subtitle-wrapper">
+                <div class="hero-divider"></div>
+                <p class="hero-subtitle">Peluquería Unisex</p>
+                <div class="hero-divider"></div>
+            </div>
+            <p class="hero-tagline">Donde el arte y el estilo se encuentran</p>
+            <button class="cta-button" id="ctaButton">Reservar Cita</button>
+        </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <div>
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <p class="section-subtitle">Calidad y estilo en cada servicio</p>
+                </div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="scissors"></i></div>
+                    <h3>Corte</h3>
+                    <p>Cortes modernos y clásicos adaptados a tu personalidad</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="droplet"></i></div>
+                    <h3>Coloración</h3>
+                    <p>Tintes, mechas y balayage con productos premium</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="heart"></i></div>
+                    <h3>Tratamientos</h3>
+                    <p>Hidratación, keratina y cuidados capilares</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="award"></i></div>
+                    <h3>Peinados</h3>
+                    <p>Peinados para eventos especiales y ocasiones únicas</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="user"></i></div>
+                    <h3>Barba</h3>
+                    <p>Arreglo y diseño de barba profesional</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-feather="star"></i></div>
+                    <h3>Alisados</h3>
+                    <p>Alisados permanentes y semipermanentes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <div>
+                    <h2 class="section-title">¿Por qué elegirnos?</h2>
+                    <p class="section-subtitle">La excelencia en cada detalle</p>
+                </div>
+            </div>
+            <div class="features-content">
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-number">[ 01 ]</div>
+                        <h3>Profesionales Expertos</h3>
+                        <p>Equipo capacitado con años de experiencia en las últimas tendencias y técnicas de corte.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">[ 02 ]</div>
+                        <h3>Productos Premium</h3>
+                        <p>Utilizamos solo las mejores marcas del mercado para garantizar resultados excepcionales.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">[ 03 ]</div>
+                        <h3>Ambiente Moderno</h3>
+                        <p>Instalaciones cómodas y equipadas con la última tecnología del sector.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">[ 04 ]</div>
+                        <h3>Atención Personalizada</h3>
+                        <p>Cada cliente es único y merece un trato especial adaptado a sus necesidades.</p>
+                    </div>
+                </div>
+                <div class="features-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide active">
+                                <img src="images/ejemplos/ejemplo1jpg.jpg" alt="Trabajo 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/ejemplos/ejemplo2.jpg" alt="Trabajo 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/ejemplos/ejemplo3.jpg" alt="Trabajo 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/ejemplos/ejemplo4.jpg" alt="Trabajo 4">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" id="carouselPrev">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next" id="carouselNext">
+                            <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-dots" id="carouselDots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <div>
+                    <h2 class="section-title">Galería</h2>
+                    <p class="section-subtitle">Portfolio de nuestros trabajos</p>
+                </div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo1jpg.jpg" alt="Corte Moderno">
+                    <div class="gallery-overlay">
+                        <p>Corte Moderno</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo2.jpg" alt="Coloración">
+                    <div class="gallery-overlay">
+                        <p>Coloración</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo3.jpg" alt="Peinado Evento">
+                    <div class="gallery-overlay">
+                        <p>Peinado Evento</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo4.jpg" alt="Tratamiento">
+                    <div class="gallery-overlay">
+                        <p>Tratamiento</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo5.jpg" alt="Estilo Clásico">
+                    <div class="gallery-overlay">
+                        <p>Estilo Clásico</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/ejemplos/ejemplo6.jpg" alt="Mechas">
+                    <div class="gallery-overlay">
+                        <p>Mechas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <div>
+                    <h2 class="section-title">Contáctanos</h2>
+                    <p class="section-subtitle">Estamos aquí para atenderte</p>
+                </div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-feather="map-pin"></i></div>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Calle Principal 123, Ciudad</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-feather="phone"></i></div>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+54 11 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-feather="clock"></i></div>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>Lun - Sáb: 9:00 - 20:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-feather="mail"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@innovacionpeluqueria.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Email" required>
+                    <input type="tel" placeholder="Tu Teléfono" required>
+                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logoInnovacionPNG.png" alt="Innovación Peluquería Unisex" class="footer-logo">
+                    <p>Tu estilo, nuestra pasión</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Innovación Peluquería Unisex. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar Feather Icons antes de cargar la app
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+    <script src="dist/app.js"></script>
+</body>
+</html>
